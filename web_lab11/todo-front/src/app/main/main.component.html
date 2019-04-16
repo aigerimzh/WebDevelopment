@@ -1,0 +1,30 @@
+<h1>Web Lab 11</h1>
+<h1>Todo Lists</h1>
+
+
+<div class="row mt-5">
+    <div class="col-lg-3">
+      <div *ngFor="let tl of task_lists">
+        <button type="button" class="btn btn-outline-secondary" (click)="getTasks(tl)">{{tl.name}}</button>
+      </div>
+    </div>
+    <div>
+      <h1 *ngIf="current_task_list">{{current_task_list.name}}</h1>
+      <div *ngFor="let t of tasks" class="card w-75">
+        <button type="button" class="btn btn-outline-dark" (click)="getTask(t)">{{t.name}}</button>
+        <div *ngIf="current_task">
+            <div *ngIf="current_task.id == t.id" class="jumbotron jumbotron-fluid">
+                <div class="container">
+                  <h1 class="display-4">Name: {{current_task.name}}</h1>
+                    ID: {{current_task.id}} <br>
+                    Created date: {{current_task.created_at}} <br>
+                    Due date: {{current_task.due_on}} <br>
+                    Status: {{current_task.status}} <br>
+                    Task: {{current_task.task_list.name}} <br>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
