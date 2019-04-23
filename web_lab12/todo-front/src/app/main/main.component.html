@@ -45,7 +45,6 @@
                 Created date: {{current_task.created_at}} <br>
                 Due date: {{current_task.due_on}} <br>
                 Status: {{current_task.status}} <br>
-                Task: {{current_task.task_list.name}} <br>
                 <button type="button" class="btn btn-outline-primary m-1" (click)="changeMode('update_task')">Update</button>
                 <button type="button" class="btn btn-outline-danger m-1" (click)="deleteTask(t.id)">Delete</button>
               </div>
@@ -70,7 +69,7 @@
       </div>
       <div class="col-lg-4">
         <ng-container *ngIf="mode=='create_task'">
-          <h5>Create new task in {{current_task_list.name}}</h5>
+          <h5>Create Task in {{current_task_list.name}}</h5>
           <div class="form-group m-2">
             <label>Name</label>
             <input type="text" class="form-control" placeholder="Enter name" [(ngModel)]="task_name">
@@ -80,6 +79,7 @@
             <input type="text" class="form-control" placeholder="Enter due on" [(ngModel)]="task_due_on">
             <label>Status</label>
             <input type="text" class="form-control" placeholder="Enter status" [(ngModel)]="task_status">
+            
             <button type="submit" class="btn btn-outline-dark m-2" (click)="createTask(current_task_list)">Create</button>
           </div>
         </ng-container>

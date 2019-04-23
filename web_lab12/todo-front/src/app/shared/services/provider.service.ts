@@ -46,7 +46,8 @@ export class ProviderService extends MainService{
       name: name,
       created_at: created_at,
       due_on: due_on,
-      status: status
+      status: status,
+      task_list: task_list.id
     })
   }
 
